@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.10">
     <world name="car_world">
-        <physics name="1ms" type="ignored">
+        <physics name="default" type="ignored">
             <max_step_size>0.001</max_step_size>
             <real_time_factor>1.0</real_time_factor>
         </physics>
@@ -111,16 +111,16 @@
                     </inertia>
                 </inertial>
                 <visual name="visual">
-                    <geomentry>
+                    <geometry>
                         <cylinder>
                             <radius>0.4</radius>
                             <length>0.2</length>
                         </cylinder>
-                    </geomentry>
+                    </geometry>
                     <material>
-                        <ambient>0.0 1.0 0.0 1</ambient>
-                        <diffuse>0.0 1.0 0.0 1</diffuse>
-                        <specular>0.0 1.0 0.0 1</specular>
+<ambient>0.0 0.0 1.0 1</ambient>
+<diffuse>0.0 0.0 1.0 1</diffuse>
+<specular>0.0 0.0 1.0 1</specular>
                     </material>
                 </visual>
                 <collision name="collision">
