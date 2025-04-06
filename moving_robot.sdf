@@ -17,6 +17,12 @@
             filename="gz-sim-scene-broadcaster-system"
             name="gz::sim::systems::SceneBroadcaster">
         </plugin>
+        <plugin filename="gz-sim-imu-system"
+                name="gz::sim::systems::Imu">
+        </plugin>
+        <plugin filename="gz-sim-contact-system"
+                name="gz::sim::systems::Contact">
+        </plugin>
 
         <light type="directional" name="sun">
             <cast_shadows>true</cast_shadows>
@@ -94,6 +100,14 @@
                         </box>
                     </geometry>
                 </collision>
+
+                <sensor name="imu_sensor" type="imu">
+                    <always_on>1</always_on>
+                    <update_rate>1</update_rate>
+                    <visualize>true</visualize>
+                    <topic>sensor/imu</topic>
+                </sensor>
+
             </link>
 
             <!--let's build the left wheel-->
@@ -254,6 +268,7 @@
                 <odom_publish_frequency>1</odom_publish_frequency>
                 <topic>cmd_vel</topic>
             </plugin>
+
         </model>
 
         <!-- Moving Left-->
@@ -296,5 +311,57 @@
                 linear: {x: -0.5}, angular: {z: 0.0}
             </output>
         </plugin>
+
+        <plugin filename="gz-sim-triggered-publisher-system"
+                name="gz::sim::systems::TriggeredPublisher">
+            <input type="gz.msgs.Boolean" topic="/wall/touched">
+                <match>data: true</match>
+            </input>
+            <output type="gz.msgs.Twist" topic="/cmd_vel">
+                linear: {x: 0.0}, angular: {z: 0.0}
+            </output>
+        </plugin>
+
+        <model name="wall">
+            <static>true</static>
+            <pose>5 0 0 0 0 0</pose>
+            <link name="box">
+                <visual name="visual">
+                    <geometry>
+                        <box>
+                            <size>0.5 10.0 2.0</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <ambient>0.5 0.5 0.0 1</ambient>
+                        <diffuse>0.5 0.5 0.0 1</diffuse>
+                        <specular>0.5 0.5 0.0 1</specular>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>0.5 10.0 2.0</size>
+                        </box>
+                    </geometry>
+                </collision>
+
+                <sensor name='sensor_contact' type='contact'>
+                    <contact>
+                        <collision>collision</collision>
+                    </contact>
+                </sensor>
+            </link>
+
+            <plugin filename="gz-sim-touchplugin-system"
+                    name="gz::sim::systems::TouchPlugin">
+                <target>vehicle_blue</target>
+                <namespace>wall</namespace>
+                <time>0.001</time>
+                <enabled>true</enabled>
+            </plugin>
+
+        </model>
+
     </world>
 </sdf>

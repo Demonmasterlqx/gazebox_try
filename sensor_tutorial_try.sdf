@@ -1,3 +1,12 @@
 <?xml version="1.0" ?>
 <sdf version="1.8">
+    <plugin
+        filename="gz-sim-physics-system"
+        name="gz::sim::systems::Physics">
+    </plugin>
+    <plugin
+        filename="gz-sim-scene-broadcaster-system"
+        name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+
 </sdf>
