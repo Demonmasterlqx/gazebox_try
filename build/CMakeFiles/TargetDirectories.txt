@@ -1,0 +1,3 @@
+/home/lqx/code/gazebox_try/build/CMakeFiles/lidar_node.dir
+/home/lqx/code/gazebox_try/build/CMakeFiles/edit_cache.dir
+/home/lqx/code/gazebox_try/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gz version="1.0">
+    <executable name="sensor_world">
+        <command>gz sim moving_robot.sdf</command>
+    </executable>
+    <executable name="sensor_node">
+        <command>./build/lidar_node</command>
+    </executable>
+</gz>
