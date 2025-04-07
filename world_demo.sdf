@@ -62,64 +62,9 @@
 
     <include>
     <uri>
-    https://fuel.gazebosim.org/1.0/sirozikas/models/Shelf with ARUco boxes
+      model://parrot_bebop_2
     </uri>
     </include>
-
-    <!-- <actor name="actor_walking">
-        <skin>
-            <filename>/home/lqx/code/gazebox_try/walk.dae</filename>
-            <scale>1.0</scale>
-        </skin>
-        <animation name="walk">
-            <filename>/home/lqx/code/gazebox_try/walk.dae</filename>
-            <interpolate_x>true</interpolate_x>
-        </animation>
-
-        <script>
-          <loop>true</loop>
-          <delay_start>0.000000</delay_start>
-          <auto_start>true</auto_start>
-          <trajectory id="0" type="walk" tension="0.6">
-              <waypoint>
-                  <time>0</time>
-                  <pose>0 0 1.0 0 0 0</pose>
-              </waypoint>
-              <waypoint>
-                  <time>1</time>
-                  <pose>2.0 0 1.0 0 0 0</pose>
-              </waypoint>
-              <waypoint>
-                  <time>1.1</time>
-                  <pose>2 0 1.0 0 0 1.57</pose>
-              </waypoint>
-              <waypoint>
-                  <time>1.2</time>
-                  <pose>2 2 1.0 0 0 1.57</pose>
-              </waypoint>
-              <waypoint>
-                  <time>1.3</time>
-                  <pose>2 2 1.0 0 0 3.142</pose>
-              </waypoint>
-              <waypoint>
-                  <time>2</time>
-                  <pose>0 2 1 0 0 3.142</pose>
-              </waypoint>
-              <waypoint>
-                  <time>2.5</time>
-                  <pose>0 2 1 0 0 -1.57</pose>
-              </waypoint>
-              <waypoint>
-                  <time>2.6</time>
-                  <pose>0 0 1.0 0 0 -1.57</pose>
-              </waypoint>
-              <waypoint>
-                  <time>2.7</time>
-                  <pose>0 0 1.0 0 0 0</pose>
-              </waypoint>
-          </trajectory>
-        </script>
-    </actor> -->
 
   </world>
 </sdf>
