@@ -60,11 +60,5 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
 
-    <include>
-    <uri>
-      model://parrot_bebop_2
-    </uri>
-    </include>
-
   </world>
 </sdf>
