@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="test_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.73472347597681E-18 -5.20417042793042E-18 0.0195117712863661"
+        rpy="0 0 0" />
+      <mass
+        value="0.0132113885374552" />
+      <inertia
+        ixx="2.10789903136143E-06"
+        ixy="1.05879118406788E-22"
+        ixz="-2.03993362626164E-22"
+        iyy="2.10789903136143E-06"
+        iyz="-6.71062631108864E-22"
+        izz="6.99059444818741E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/lqx/Desktop/test_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/lqx/Desktop/test_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rotate">
+    <inertial>
+      <origin
+        xyz="0.00142483404574694 -1.73472347597681E-18 -0.00776564858827069"
+        rpy="0 0 0" />
+      <mass
+        value="0.00527265871837226" />
+      <inertia
+        ixx="4.23732229539542E-07"
+        ixy="8.9335506155727E-23"
+        ixz="1.67859306401373E-08"
+        iyy="5.40867575473762E-07"
+        iyz="4.11864514337365E-23"
+        izz="6.13919741060025E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/lqx/Desktop/test_urdf/meshes/rotate.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/lqx/Desktop/test_urdf/meshes/rotate.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rotate_link"
+    type="continuous">
+    <origin
+      xyz="0 0 0.045"
+      rpy="0 0 3.03563819795604" />
+    <parent
+      link="base_link" />
+    <child
+      link="rotate" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
